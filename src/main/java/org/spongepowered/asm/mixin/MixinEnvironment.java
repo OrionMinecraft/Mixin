@@ -24,15 +24,8 @@
  */
 package org.spongepowered.asm.mixin;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -58,8 +51,14 @@ import org.spongepowered.asm.util.JavaVersion;
 import org.spongepowered.asm.util.PrettyPrinter;
 import org.spongepowered.asm.util.perf.Profiler;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Sets;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * The mixin environment manages global state information for the mixin
@@ -602,17 +601,15 @@ public final class MixinEnvironment implements ITokenProvider {
         /**
          * Java 9 and above
          */
-        JAVA_9(9, CompatibilityLevel.CLASS_V1_9, true) {
+        JAVA_9(9, Opcodes.V1_9, true) {
             
             @Override
             boolean isSupported() {
-                return false;
+                return JavaVersion.current() >= 1.9;
             }
             
         };
-        
-        // Temp, until ASM supports Java 9
-        private static final int CLASS_V1_9 = 0 << 16 | 53;
+
         
         private final int ver;
         

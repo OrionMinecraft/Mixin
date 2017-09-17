@@ -98,8 +98,8 @@ sourceSets {
 
 // Dependencies for renamed ASM
 dependencies {
-    asm 'org.ow2.asm:asm-debug-all:5.2'
-    asm 'org.ow2.asm:asm-debug-all:5.2:sources'
+    asm 'org.ow2.asm:asm-debug-all:6.0_BETA'
+    asm 'org.ow2.asm:asm-debug-all:6.0_BETA:sources'
     jarjar 'com.googlecode.jarjar:jarjar:1.1'
 }
 
@@ -140,9 +140,9 @@ task renamedASM {
         }
     }
     
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-debug-all:5.2')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-debug-all:5.2')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-debug-all:5.2')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-debug-all:6.0_BETA')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-debug-all:6.0_BETA')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-debug-all:6.0_BETA')
 
 }
 eclipseClasspath.dependsOn(renamedASM)
@@ -187,7 +187,7 @@ dependencies {
     
     // asm bridge
     bridgeCompile log4j2
-    bridgeCompile 'org.ow2.asm:asm-commons:5.0.3'
+    bridgeCompile 'org.ow2.asm:asm-commons:6.0_BETA'
 }
 
 // Eclipse
