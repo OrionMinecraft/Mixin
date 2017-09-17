@@ -23,7 +23,7 @@ defaultTasks 'licenseFormat', 'check', 'build'
 
 // Basic project information
 group = 'org.spongepowered'
-archivesBaseName = 'mixin'
+archivesBaseName = 'mixin-mikroskeem'
 version = buildVersion + (buildType == 'RELEASE' ? '' : "-$buildType")
 
 // Extended project information
@@ -437,14 +437,14 @@ uploadArchives {
                     url 'http://www.spongepowered.org/'
 
                     scm {
-                        url 'https://github.com/SpongePowered/Mixin'
-                        connection 'scm:git:git://github.com/SpongePowered/Mixin.git'
-                        developerConnection 'scm:git:git@github.com:SpongePowered/Mixin.git'
+                        url 'https://github.com/OrionMinecraft/Mixin'
+                        connection 'scm:git:git://github.com/OrionMinecraft/Mixin.git'
+                        developerConnection 'scm:git:git@github.com:OrionMinecraft/Mixin.git'
                     }
 
                     issueManagement {
                         system 'GitHub Issues'
-                        url 'https://github.com/SpongePowered/Mixin/issues'
+                        url 'https://github.com/OrionMinecraft/Mixin/issues'
                     }
 
                     licenses {
